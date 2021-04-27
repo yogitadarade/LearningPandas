@@ -13,18 +13,17 @@
 👨‍👨‍👯‍[Data Aggregation ,Combining data frame and Groupby](#Data-Aggregation-dataframe-and-Groupby)<br>
 
 <h1 style="font-family:COMIC SANS ;text-align:center;background-color:lightpink"><b>🤷‍ Purpose of Analysis 🤷‍</b></h1>
-#Purpose of Analysis
-<font size=3 style="font-family:COMIC SANS MS" ><b><i>The biggest motivation for this notebook was a simple thought to get better at Pandas.The best way to learn or improve is to write about it .With this thought process, I have created a simple tutorial along with a Case study on a Youtube trending Dataset to provide examples how these Panda functions can be used during analysis.
-Questions which I want to answer with this analysis :
+
+<font size=3 style="font-family:COMIC SANS MS" ><b><i>The biggest motivation for this notebook was a simple thought to get better at Pandas.The best way to learn or improve is to write about it .With this thought process, I have created a simple tutorial along with a Case study on a Youtube trending Dataset to provide examples how these Panda functions can be used during analysis.Questions which I want to answer with this analysis :
     
 - Which is most watched video in India. ❓(Most watch doesnot mean trending)
 - Number of videos published in 2021❓<br>
-- How many videos did T-Series publish ❓<br>
+- How many videos did T-Series publish❓<br>
 - Top 30 videos that has been most watched❓<br>
 - Top 3 Categories having maximum pubished videos in 2020❓<br>
 - Top 10 Most liked videos in India❓
 </i></b></font>
-#Reading Data
+<br>
 <font size=3 style="font-family:COMIC SANS MS" style="font-family:COMIC SANS MS" ><b><i><u> Getting  Dataset: 🧧</u></i></b></font>
 
 <table style ="width:100%;border:black;border-width:1px; border- style:solid;  border-collapse: collapse" >
