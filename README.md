@@ -1,85 +1,97 @@
+<br><h1 style="font-family:COMIC SANS;text-align:center;background-color:lightpink" ><b>📑Table of Contents📑</b></h1><br>
+<font size=3 color="black" style="font-family:COMIC SANS MS" ><i>
+
+🤷‍[Purpose of Analysis](#Purpose-of-Analysis)<br>
+🌐 [Basic Pandas functions](#Basic-Pandas-functions)<br>
+📖 [Reading Dataset](#Reading-Data) <br>
+👀 [Exploring Dataset](#Exploring-Dataset)<br>
+🎭 [Converting Datatypes](#Converting-Datatypes) <br>
+🩸 [Add/Rename/Drop/Filter Columns](#Add-Rename-Drop-Filter-Columns)<br>
+❓ [Missing Values](#Missing-Values) <br>
+📄 [Descriptive Statistics](#Descriptive-Statistics)<br>
+🔪 [Slicing/Subsetting](#Slicing-Subsetting)<br> 
+👨‍👨‍👯‍[Data Aggregation ,Combining data frame and Groupby](#Data-Aggregation-dataframe-and-Groupby)<br>
 
 <h1 style="font-family:COMIC SANS ;text-align:center;background-color:lightpink"><b>🤷‍ Purpose of Analysis 🤷‍</b></h1>
-<font size=3 style="font-family:COMIC SANS MS" ><b><i>
-Data analysis starts with questions, not data or a some specific techniques. What is that you  want to acheive with this data?What are the questions you want to answer with your data.? what kind of problems you want to address.?The questions will keep on evolving as we look at data. 
-Finally "Analysis without question / or problems to solve  is aimless.I am using the Youtube Trending dataset to demonstrate the functions .Please check the notebook.
-<b>Questions which I want to answer with this analysis :</b>
-
+#Purpose of Analysis
+<font size=3 style="font-family:COMIC SANS MS" ><b><i>The biggest motivation for this notebook was a simple thought to get better at Pandas.The best way to learn or improve is to write about it .With this thought process, I have created a simple tutorial along with a Case study on a Youtube trending Dataset to provide examples how these Panda functions can be used during analysis.
+Questions which I want to answer with this analysis :
+    
 - Which is most watched video in India. ❓(Most watch doesnot mean trending)
 - Number of videos published in 2021❓<br>
-- How many videos did T-Series publish❓<br>
+- How many videos did T-Series publish ❓<br>
 - Top 30 videos that has been most watched❓<br>
 - Top 3 Categories having maximum pubished videos in 2020❓<br>
 - Top 10 Most liked videos in India❓
 </i></b></font>
-
+#Reading Data
 <font size=3 style="font-family:COMIC SANS MS" style="font-family:COMIC SANS MS" ><b><i><u> Getting  Dataset: 🧧</u></i></b></font>
 
 <table style ="width:100%;border:black;border-width:1px; border- style:solid;  border-collapse: collapse" >
   <thead>
     <tr>
-      <th style="text-align:center;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;background-color:lightgreen ;padding: 10px "> 
+      <th style="text-align:center;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;background-color:lightgreen ;padding: 10px "> 
               To Read  Dataset From 
       </th>
-      <th style="text-align:center;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;background-color:lightgreen ;padding: 10px ">
+      <th style="text-align:center;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;background-color:lightgreen ;padding: 10px ">
               Method
       </th>
       </tr>
     </thead>
     <tbody>
         <tr>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
               CSV&nbsp;
             </td>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
               pd.read_csv(filename)
             </td>
         </tr>
         <tr >
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
               TAB/Delimited /TSV
             </td>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
               pd.read_table(filename)
             </td>
         </tr>
         <tr>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
              EXCEL
             </td>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
              d.read_excel('myfile.xlsx',sheet_name='Sheet1', index_col=None)
             </td>
         </tr>
         <tr>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
              SQL Table
             </td>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
              pd.read_sql(query,connection_object)
             </td>
         </tr>
         <tr >
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
              JSON formatted string<
             </td>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
                 pd.read_json(json_string)
             </td>
         </tr>
         <tr>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 HTML url
             </td>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 pd.read_html(url)
             </td>
         </tr>
         <tr>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 Clipboard
             </td>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 pd.read_clipboard()
             </td>
         </tr>
@@ -103,122 +115,122 @@ what data types you are working with, and help you in your analysis.</i></b></fo
    </thead>
    <tbody>
         <tr>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
                 Displays top 5 row or  n rows;</td>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
                 df_india.head()/df_india.head(n)
             </td>
         </tr>
         <tr>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 Displays bottom 5 row or  n rows
             </td>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 df_india.tail()/df_india.tail(n)
             </td>
         </tr>
         <tr>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 Displays randomly selected rows
             </td>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 df_india.sample(n)
             </td>
         </tr>
         <tr>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
                 Selecting  certain columns
             </td>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
                 col=['title','trending_date','view_count']
                 df_india[col].head()
             </td>
         </tr>
         <tr>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 Select and order top n entries
             </td>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
                 df_india.nlargest(10, 'view_count')
             </td>
         </tr>
         <tr>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 Select and order bottom n entries
             </td>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
                 df_india.nsmallest(10, 'view_count')
             </td>
         </tr>
         <tr>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 Distinct values in a column
             </td>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px">
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px">
                 df_india['trending_date'].nunique()
             </td>
         </tr>
         <tr>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 Count number of rows with each unique value of variable
             </td>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 df_india['trending_date'].value_counts()
             </td>
         </tr>
         <tr>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 To display datatypes of variables
             </td>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 df_india.dtypes 
             </td>
         </tr>
         <tr>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 Displays numbers of rows and column our dataset <br>contains.Its a tuple representing the dimensions
             </td>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px ">
                 df_india.shape 
             </td>
         </tr>
         <tr>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 This method print info about a dataset including the index dtype <br>and columns,non-null values and memory usage
             </td>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px" >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px" >
                 df_india.info() 
             </td>
         </tr>
         <tr>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 A selection of numeric dtypes  to be included/excluded.
             </td>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 df_india.select_dtypes(include = [np.number]).dtypes
             </td>
         </tr>
         <tr>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 A selection of object dtypes to be included/excluded. 
             </td>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 df_india.select_dtypes(include = [np.object]).dtypes
             </td>
         </tr>
         <tr>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 A selection of datetime dtypes to be included/excluded.  
             </td>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 df_india.select_dtypes(include =  [np.datetime64]).dtypes
             </td>
         </tr>
         <tr>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 To select Pandas categorical dtypes 
             </td>
-            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
+            <td style="text-align:left;border: 1px solid black;font-family:COMIC SANS MS;font-size:100%;padding: 10px " >
                 df_india.select_dtypes(include = 'category').dtypes
             </td>
         </tr>
@@ -278,7 +290,7 @@ what data types you are working with, and help you in your analysis.</i></b></fo
             </td>
         </tr>
     </tbody>
-</table>     
+</table> <br>    
  <font size=3 style="font-family:COMIC SANS MS" ><b><i><u>Adding /Renaming/Dropping Columns </u>➕🩸🩸</i></b></font>
         
 <table style ="width:100%;border:black;border-width:1px; border- style:solid;  border-collapse: collapse" >
@@ -391,7 +403,7 @@ what data types you are working with, and help you in your analysis.</i></b></fo
             </td>
         </tr>               
     </tbody>
-</table>
+</table><br>
 <font size=3 style="font-family:COMIC SANS MS">
     <b>
         <i><u>Checking and Handling Missing Values.:❓❓</u>
@@ -505,7 +517,7 @@ what data types you are working with, and help you in your analysis.</i></b></fo
             </td>
         </tr>
     </tbody>
-</table>    
+</table>    <br>
     <font size=3 style="font-family:COMIC SANS MS">
     <b>
     <i><u>
