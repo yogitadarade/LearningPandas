@@ -331,7 +331,7 @@ what data types you are working with, and help you in your analysis.</i></b></fo
      </tbody>
 </table>      <br>
  
-<font size=3 style="font-family:COMIC SANS MS"><b><i><u>Descriptive Statistics📄📄</u>   
+<font size=3 style="font-family:COMIC SANS MS"><b><i><u>Descriptive Statistics📄📄</u>   <br>
     Descriptive statistics, which include things like the mean, median,Quartiles,Minimum,Standard Deviation etc of the data , can be useful to understand the spread of the variables are and what variables may be the most important. Descriptive statistics on pandas objects exclude missing data by default</i></b></font><br> 
 
 <table style ="width:100%;border:black;border-width:1px; border- style:solid;  border-collapse: collapse" >
@@ -405,7 +405,7 @@ what data types you are working with, and help you in your analysis.</i></b></fo
 </table><br>
 <font size=3 style="font-family:COMIC SANS MS">
     <b>
-        <i><u>Checking and Handling Missing Values.:❓❓</u>
+        <i><u>Checking and Handling Missing Values.:❓❓</u><br>
    .When no data value is stored for feature for a particular observation, we say this feature has a missing value.Missing value handling is a post in itself and will be covered later </i>
     </b>
 </font> <br>
@@ -475,7 +475,7 @@ what data types you are working with, and help you in your analysis.</i></b></fo
          </tr>    
     </tbody>
 </table><br>
-<font size=3 style="font-family:COMIC SANS MS" ><b><i><u>Slicing /Subsetting  DataSet :🔪🔪</u>
+<font size=3 style="font-family:COMIC SANS MS" ><b><i><u>Slicing /Subsetting  DataSet :🔪🔪</u><br>
         One of the most effective ways to get more information out of a dataset is to divide it into smaller, 
         more uniform subsets, and analyze each of these "subset" on its own. </i>
     </b>
@@ -520,7 +520,7 @@ what data types you are working with, and help you in your analysis.</i></b></fo
     <font size=3 style="font-family:COMIC SANS MS">
     <b>
     <i><u>
-        Data Aggregation,comibing dataframe and Groupby:👯‍♂️👯‍👨‍👨‍👦‍👦</u>
+        Data Aggregation,comibing dataframe and Groupby:👯‍♂️👯‍👨‍👨‍👦‍👦</u><br>
       One of the most basic analysis functions is grouping and aggregating data. An aggregation function is one which takes multiple individual values and returns a summary.In pandas, the groupby function can be combined with one or more aggregation functions to quickly and easily summarize data. 
         </i>
     </b>
